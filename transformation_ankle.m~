@@ -1,0 +1,10 @@
+function joint_point = transformation_ankle(x_hip,y_hip,alpha,beta,gamma)
+
+% robot link lengths (m)
+l1 = 0.468; % thigh
+l2 = 0.526; % torso
+
+X = x_hip-(l1*sin(beta))-(l2*sin((gamma)));
+Y = y_hip-(l1*cos(beta))-(l2*cos((gamma+beta)));
+
+joint_point = [X Y];
